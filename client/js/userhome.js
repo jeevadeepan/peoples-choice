@@ -1,5 +1,5 @@
-const startDate = localStorage.getItem('startDate');
-const endDate = localStorage.getItem('endDate');
+const startDate = localStorage.getItem('__startDate');
+const endDate = localStorage.getItem('__endDate');
 
 if(startDate && endDate) {
 	const todayUTC = moment().valueOf();
@@ -8,6 +8,7 @@ if(startDate && endDate) {
 
 	if (todayUTC >= startDateUTC && todayUTC <= endDateUTC) {
 		document.getElementById('votingInProgress').classList.toggle('hidden');
+		document.getElementById('endCountdownFiller').innerHTML = moment(endDate).fromNow();
 	} else {
 		document.getElementById('votingScheduled').classList.toggle('hidden');
 		document.getElementById('startCountdownFiller').innerHTML = moment(startDate).fromNow();
@@ -16,3 +17,11 @@ if(startDate && endDate) {
 } else {
 	document.getElementById('votingClosed').classList.toggle('hidden');
 }
+
+//savePresentation
+document.getElementById('saveUserName').addEventListener('click', () => {
+
+	localStorage.setItem('__userName', document.getElementById('userName').value);
+
+	window.location.href = "/uservoting.html";
+});

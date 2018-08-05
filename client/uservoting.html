@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>People's Choice - User Voting</title>
+	<style type="text/css">
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<section id="castVote" class="hidden">
+		<form id="votingForm">
+    		<fieldset></fieldset>
+    		<button type="submit" id="submitVote">Submit vote</button>
+		</form>
+	</section>
+	<section id="changeVote" class="hidden">
+		You have voted for <span id="currentVoteFiller"></span>.
+		<button id="changeVoteAction">Change your vote</button>
+	</section>
+</body>
+<script type="text/javascript" src="./js/lib/moment.min.js"></script>
+<script type="text/javascript" src="./js/uservoting.js"></script>
+</html>

@@ -1,7 +1,7 @@
 const startDateInput = document.getElementById('startDate');
 const endDateInput = document.getElementById('endDate');
-const startDate = localStorage.getItem('startDate');
-const endDate = localStorage.getItem('endDate');
+const startDate = localStorage.getItem('__startDate');
+const endDate = localStorage.getItem('__endDate');
 
 startDateInput.setAttribute('min', moment().format(moment.HTML5_FMT.DATE));
 
@@ -10,8 +10,8 @@ startDateInput.addEventListener('change', () => {
 });
 
 document.getElementById('saveDates').addEventListener('click', () => {
-	localStorage.setItem('startDate', startDateInput.value);
-	localStorage.setItem('endDate', endDateInput.value);
+	localStorage.setItem('__startDate', startDateInput.value);
+	localStorage.setItem('__endDate', endDateInput.value);
 	window.location.reload();
 });
 
@@ -34,7 +34,7 @@ if(startDate && endDate) {
 	if(todayUTC >= startDateUTC && todayUTC <= endDateUTC) {
 		votingStatusSection.innerHTML = 'Voting is in progress ...';
 	} else {
-		votingStatusSection.innerHTML = `Voting begins ${moment(endDate).fromNow()}`;
+		votingStatusSection.innerHTML = `Voting begins ${moment(startDate).fromNow()}`;
 	}
 
 	//populate vote results
@@ -47,7 +47,7 @@ function populateVoteResults() {
 
 	Array.from(Array(localStorage.length).keys()).forEach((index) => {
 		const recordName = localStorage.key(index);
-		if (recordName === 'startDate' || recordName === 'endDate') return;
+		if (recordName.indexOf('__') === 0) return;
 
 		const candidateDetail = JSON.parse(localStorage.getItem(recordName));
 
