@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>People's choice - Admin voting</title>
+	<style type="text/css">
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<section id="votingUnscheduled">
+	<p>Voting not scheduled yet!</p>
+	<label>Choose dates to schedule one.</label>
+	<input type="date" id="startDate">
+	<input type="date" id="endDate">
+	<button id="saveDates">--></button>
+</section>
+<section id="votingScheduled" class="hidden">
+	<section id="votingDates">
+		Voting starts <span id="startDateFiller"></span> and ends <span id="endDateFiller"></span>
+	</section>
+	<section id="votingStatus"></section>
+
+	<section id="votingResults">
+		<table id="resultsTable">
+			<thead>
+				<tr>
+					<th>Candidate Name</th>
+					<th>Presentation</th>
+					<th>Votes</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</section>
+</section>
+</body>
+<script type="text/javascript" src="./js/lib/moment.min.js"></script>
+<script type="text/javascript" src="./js/adminvoting.js"></script>
+</html>

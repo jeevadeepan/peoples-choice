@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>People's Choice - Upload candidate details</title>
+	<style type="text/css">
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<section id="askName">
+	<label for="candidateName">What's the candidate's name ?</label>
+	<input name="candidateName" id="candidateName" type="text">
+	<button type="submit" id="saveName">--></button>
+</section>
+<section id="askPresentation" class="hidden">
+	<label for="candidatePresentation">What's <span id="candidateNameFiller"></span> presentation about ?</label>
+	<input name="candidatePresentation" id="candidatePresentation" type="text">
+	<button type="submit" id="savePresentation">--></button>
+</section>
+</body>
+<script type="text/javascript" src="./js/adminupload.js"></script>
+</html>
