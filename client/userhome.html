@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>People's Choice - User Home</title>
+	<style type="text/css">
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<section id="votingScheduled" class="hidden">
+		Hey there! Voting begins <span id="startCountdownFiller"></span>
+		<p>Come back on <span id="startDateFiller"></span> to vote.</p>
+	</section>
+	<section id="votingClosed" class="hidden">
+		Hi there! Voting is closed now. Come back later!
+	</section>
+	<section id="votingInProgress" class="hidden">
+		Voting in Progress! Ends <span id="endCountdownFiller"></span>
+		<p>You can vote for your favorite presentation now!</p>
+		<label for="userName">Let's start with your name ..</label>
+		<input type="text" name="userName" id="userName">
+		<button id="saveUserName">--></button>
+	</section>
+</body>
+<script type="text/javascript" src="./js/lib/moment.min.js"></script>
+<script type="text/javascript" src="./js/userhome.js"></script>
+</html>
