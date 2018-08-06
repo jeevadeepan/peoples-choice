@@ -1,22 +1,26 @@
 <html>
 <head>
 	<title>People's Choice - Upload candidate details</title>
-	<style type="text/css">
-		.hidden {
-			display: none;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="./css/lib/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body>
-<section id="askName">
-	<label for="candidateName">What's the candidate's name ?</label>
-	<input name="candidateName" id="candidateName" type="text">
-	<button type="submit" id="saveName">--></button>
-</section>
-<section id="askPresentation" class="hidden">
-	<label for="candidatePresentation">What's <span id="candidateNameFiller"></span> presentation about ?</label>
-	<input name="candidatePresentation" id="candidatePresentation" type="text">
-	<button type="submit" id="savePresentation">--></button>
+<a href="/" id="headerLink"><header>Ness Tech Days - People's Choice</header></a>
+<section id="pageContainer">
+	<section id="askName">
+		<section class="inputContainer">
+			<label for="candidateName">What's the candidate's name ?</label>
+			<input name="candidateName" id="candidateName" type="text">
+		</section>
+		<button type="submit" id="saveName">Go</button>
+	</section>
+	<section id="askPresentation" class="hidden">
+		<section class="inputContainer">
+			<label for="candidatePresentation">What's <span id="candidateNameFiller"></span> presentation about ?</label>
+			<input name="candidatePresentation" id="candidatePresentation" type="text">
+		</section>
+		<button type="submit" id="savePresentation">Go</button>
+	</section>
 </section>
 </body>
 <script type="text/javascript" src="./js/adminupload.js"></script>

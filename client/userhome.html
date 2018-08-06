@@ -1,21 +1,19 @@
 <html>
 <head>
 	<title>People's Choice - User Home</title>
-	<style type="text/css">
-		.hidden {
-			display: none;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="./css/lib/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body>
-	<section id="votingScheduled" class="hidden">
+	<a href="/" id="headerLink"><header>Ness Tech Days - People's Choice</header></a>
+	<section id="userVotingScheduled" class="hidden">
 		Hey there! Voting begins <span id="startCountdownFiller"></span>
 		<p>Come back on <span id="startDateFiller"></span> to vote.</p>
 	</section>
-	<section id="votingClosed" class="hidden">
+	<section id="userVotingClosed" class="hidden">
 		Hi there! Voting is closed now. Come back later!
 	</section>
-	<section id="votingInProgress" class="hidden">
+	<section id="userVotingInProgress" class="hidden">
 		Voting in Progress! Ends <span id="endCountdownFiller"></span>
 		<p>You can vote for your favorite presentation now!</p>
 		<label for="userName">Let's start with your name</label>

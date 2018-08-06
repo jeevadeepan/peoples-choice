@@ -4,6 +4,8 @@ document.getElementById('saveName').addEventListener('click', () => {
 	newCandidate.name = document.getElementById('candidateName').value;
 	document.getElementById('askName').classList.toggle('hidden');
 	document.getElementById('askPresentation').classList.toggle('hidden');
+	localStorage.setItem('__userName', newCandidate.name);
+	document.getElementById('candidateNameFiller').innerHTML = newCandidate.name;
 });
 
 

@@ -2,20 +2,18 @@ const startDate = localStorage.getItem('__startDate');
 const endDate = localStorage.getItem('__endDate');
 
 if(startDate && endDate) {
-	const todayUTC = moment().valueOf();
-	const startDateUTC = moment(startDate).valueOf();
-	const endDateUTC = moment(endDate).valueOf();
+	const todayMoment = moment().format(moment.HTML5_FMT.DATE);
 
-	if (todayUTC >= startDateUTC && todayUTC <= endDateUTC) {
-		document.getElementById('votingInProgress').classList.toggle('hidden');
-		document.getElementById('endCountdownFiller').innerHTML = moment(endDate).fromNow();
+	if (moment(todayMoment).isBetween(startDate, endDate, null, [])) {
+		document.getElementById('userVotingInProgress').classList.toggle('hidden');
+		document.getElementById('endCountdownFiller').innerHTML = moment(endDate).format('DD MMM YYYY');
 	} else {
-		document.getElementById('votingScheduled').classList.toggle('hidden');
+		document.getElementById('userVotingScheduled').classList.toggle('hidden');
 		document.getElementById('startCountdownFiller').innerHTML = moment(startDate).fromNow();
 		document.getElementById('startDateFiller').innerHTML = moment(startDate).format('DD MMM YYYY');
 	}
 } else {
-	document.getElementById('votingClosed').classList.toggle('hidden');
+	document.getElementById('userVotingClosed').classList.toggle('hidden');
 }
 
 //savePresentation
