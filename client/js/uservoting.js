@@ -21,11 +21,11 @@ function getUserVote() {
 
 function populateCandidates() {
 	const castVoteSection = document.getElementById('castVote').querySelector('fieldset');
-	let candidateOptions = '<legend>Select candidate</legend>';
+	let candidateOptions = '<legend>Select presentation</legend>';
 
 	candidates.forEach((candidate) => {
-		candidateOptions += `<input type="radio" name="candidateSelection" id="${candidate.name}" value="${candidate.name}"/>`;
-		candidateOptions += `<label for="${candidate.name}">${candidate.presentation} by ${candidate.name}</label>`;
+		candidateOptions += `<section><input type="radio" name="candidateSelection" id="${candidate.name}" value="${candidate.name}"/>`;
+		candidateOptions += `<label for="${candidate.name}">${candidate.presentation} by ${candidate.name}</label></section>`;
 	});
 
 	castVoteSection.innerHTML = candidateOptions;
@@ -34,7 +34,7 @@ function populateCandidates() {
 let userVote = getUserVote();
 if (userVote) {
 	document.getElementById('changeVote').classList.remove('hidden');
-	document.getElementById('currentVoteFiller').innerHTML = `${candidateDetail.presentation} by ${candidateDetail.name}`;
+	document.getElementById('currentVoteFiller').innerHTML = `${userVote.presentation} by ${userVote.name}`;
 } else {
 	document.getElementById('castVote').classList.remove('hidden');
 	populateCandidates();
@@ -45,9 +45,22 @@ document.getElementById('submitVote').addEventListener('click', (evt) => {
 	const votedFor = document.getElementById('votingForm').candidateSelection.value;
 
 	const votedCandidate = candidates.find(candidate => candidate.name === votedFor);
-	votedCandidate.votes = votedCandidate.votes ? `${votedCandidate.votes},${userName}` : userName;
+	votedCandidate.votes = votedCandidate.votes && votedCandidate.votes.length > 0 ? `${votedCandidate.votes},${userName}` : userName;
 
 	localStorage.setItem(votedCandidate.name, JSON.stringify(votedCandidate));
 	window.alert('Thank you, your vote has been registered');
+	window.location.reload();
+});
+
+document.getElementById('changeVoteAction').addEventListener('click', (evt) => {
+	candidates.forEach((candidate) => {
+		if(candidate.name === userVote.name) {
+			let votesArr = candidate.votes.split(',');
+			const toRemoveIdx = votesArr.findIndex(voter => voter === userName);
+			votesArr.splice(toRemoveIdx, 1);
+			candidate.votes = votesArr.join(',');
+			localStorage.setItem(candidate.name, JSON.stringify(candidate));
+		}
+	});
 	window.location.reload();
 });

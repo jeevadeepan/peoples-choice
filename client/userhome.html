@@ -6,19 +6,21 @@
 </head>
 <body>
 	<a href="/" id="headerLink"><header>Ness Tech Days - People's Choice</header></a>
-	<section id="userVotingScheduled" class="hidden">
-		Hey there! Voting begins <span id="startCountdownFiller"></span>
-		<p>Come back on <span id="startDateFiller"></span> to vote.</p>
-	</section>
-	<section id="userVotingClosed" class="hidden">
-		Hi there! Voting is closed now. Come back later!
-	</section>
-	<section id="userVotingInProgress" class="hidden">
-		Voting in Progress! Ends <span id="endCountdownFiller"></span>
-		<p>You can vote for your favorite presentation now!</p>
-		<label for="userName">Let's start with your name</label>
-		<input type="text" name="userName" id="userName">
-		<button id="saveUserName">--></button>
+	<section id="pageContainer">
+		<section id="userVotingScheduled" class="hidden">
+			Hey there! Voting begins <span id="startCountdownFiller"></span>
+			<p>Come back on <span id="startDateFiller"></span> to vote.</p>
+		</section>
+		<section id="userVotingClosed" class="hidden">
+			Hi there! Voting is closed now. Come back later!
+		</section>
+		<section id="userVotingInProgress" class="hidden">
+			Voting in Progress! Ends <span id="endCountdownFiller"></span>
+			<p>You can vote for your favorite presentation now!</p>
+			<label for="userName">Let's start with your name</label>
+			<input type="text" name="userName" id="userName">
+			<button id="saveUserName">Next</button>
+		</section>
 	</section>
 </body>
 <script type="text/javascript" src="./js/lib/moment.min.js"></script>

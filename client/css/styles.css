@@ -47,6 +47,7 @@ header:hover:after {
 	display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 80%;
 }
 
@@ -98,4 +99,18 @@ button {
 th, td {
 	border: 1px solid #ccc;
 	padding: 1rem;
+}
+
+#userVotingInProgress p{
+	margin: 3rem 0;
+}
+
+#votingForm legend {
+	margin: 1rem 0;
+}
+
+#votingForm fieldset section {
+	display: flex;
+	align-items: center;
+	margin: 2rem 0;
 }

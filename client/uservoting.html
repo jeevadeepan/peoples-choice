@@ -6,15 +6,17 @@
 </head>
 <body>
 	<a href="/" id="headerLink"><header>Ness Tech Days - People's Choice</header></a>
-	<section id="castVote" class="hidden">
-		<form id="votingForm">
-    		<fieldset></fieldset>
-    		<button type="submit" id="submitVote">Submit vote</button>
-		</form>
-	</section>
-	<section id="changeVote" class="hidden">
-		You have voted for <span id="currentVoteFiller"></span>.
-		<button id="changeVoteAction">Change your vote</button>
+	<section id="pageContainer">
+		<section id="castVote" class="hidden">
+			<form id="votingForm">
+	    		<fieldset></fieldset>
+	    		<button type="submit" id="submitVote">Submit vote</button>
+			</form>
+		</section>
+		<section id="changeVote" class="hidden">
+			You have voted for <span id="currentVoteFiller"></span>.
+			<button id="changeVoteAction">Change your vote</button>
+		</section>
 	</section>
 </body>
 <script type="text/javascript" src="./js/lib/moment.min.js"></script>
