@@ -1,6 +1,7 @@
 let newCandidate = {};
 //saveName
 document.getElementById('saveName').addEventListener('click', () => {
+	document.getElementById('candidateName').focus();
 	newCandidate.name = document.getElementById('candidateName').value;
 	document.getElementById('askName').classList.toggle('hidden');
 	document.getElementById('askPresentation').classList.toggle('hidden');

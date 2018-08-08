@@ -60,6 +60,7 @@ document.getElementById('reschedule').addEventListener('click', () => {
 function populateVoteResults() {
 	const resultsTable = document.getElementById('resultsTable');
 	let resultsHTML = '';
+	let candidateVotes = [];
 
 	Array.from(Array(localStorage.length).keys()).forEach((index) => {
 		const recordName = localStorage.key(index);
@@ -67,9 +68,36 @@ function populateVoteResults() {
 
 		const candidateDetail = JSON.parse(localStorage.getItem(recordName));
 
-		resultsHTML += `<tr><td>${candidateDetail.name}</td> <td>${candidateDetail.presentation}</td> <td>${candidateDetail.votes || ''}</td></tr>`
+		const voteCount = candidateDetail.votes ? `${candidateDetail.votes.split(',').length}` : 0;
+		const voteField = candidateDetail.votes ? `${candidateDetail.votes.split(',').length} (${candidateDetail.votes})` : 0;
+
+		candidateVotes.push([candidateDetail.name, parseInt(voteCount)]);
+		resultsHTML += `<tr><td>${candidateDetail.name}</td> <td>${candidateDetail.presentation}</td> <td>${voteField}</td></tr>`
 	});
 
 	resultsTable.querySelector('tbody').innerHTML = resultsHTML;
+	chartPoll(candidateVotes);
+}
+
+function chartPoll(voteData) {
+    google.charts.load('current', {'packages':['corechart']});
+
+    google.charts.setOnLoadCallback(drawChart);
+
+	function drawChart() {
+	    var data = new google.visualization.DataTable();
+	    data.addColumn('string', 'Candidate Name');
+	    data.addColumn('number', 'Votes');
+	    data.addRows(voteData);
+
+	    // Set chart options
+	    var options = {'title':'Poll Results',
+	                   'width':400,
+	                   'height':300};
+
+	    // Instantiate and draw our chart, passing in some options.
+	    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+	    chart.draw(data, options);
+	}
 }
 

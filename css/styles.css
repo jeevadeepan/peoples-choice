@@ -48,7 +48,7 @@ header:hover:after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 50%;
 }
 
 #actionQuery {
@@ -113,4 +113,8 @@ th, td {
 	display: flex;
 	align-items: center;
 	margin: 2rem 0;
+}
+
+#chart_div div[dir=ltr]{
+	margin: 0 auto;
 }

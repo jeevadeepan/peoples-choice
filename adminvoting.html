@@ -18,7 +18,7 @@
 		</section>
 		<button id="saveDates">Schedule</button>
 	</section>
-	<section id="votingScheduled" class="hidden">
+	<section id="votingScheduled" style="height:100%" class="hidden">
 		<section id="votingStatus"></section>
 		<section id="votingDates">
 			Voting ends <span id="endDateFiller"></span>
@@ -36,6 +36,7 @@
 				<tbody></tbody>
 			</table>
 		</section>
+		<section id="chart_div"></section>
 	</section>
 	<section id="votingClosed" class="hidden">
 		<p>Voting is closed now.</p>
@@ -44,5 +45,6 @@
 </section>
 </body>
 <script type="text/javascript" src="./js/lib/moment.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="./js/adminvoting.js"></script>
 </html>

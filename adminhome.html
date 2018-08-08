@@ -3,6 +3,14 @@
 	<title>People's Choice - Admin Home</title>
 	<link rel="stylesheet" type="text/css" href="./css/lib/reset.css">
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
+	<style type="text/css">
+		#resultsTable {
+			margin: 2rem auto;
+		}
+		#votingResults {
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
 	<a href="/peoples-choice" id="headerLink"><header>Ness Tech Days - People's Choice</header></a>
@@ -13,5 +21,18 @@
 			<a href="/peoples-choice/adminvoting.html" class="actionLink">Manage Voting</a>
 		</section>
 	</section>
+	<section id="votingResults">
+		<legend>Candidate Details</legend>
+		<table id="resultsTable">
+			<thead>
+				<tr>
+					<th>Candidate Name</th>
+					<th>Presentation</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</section>
 </body>
+<script type="text/javascript" src="./js/adminhome.js"></script>
 </html>
