@@ -16,5 +16,5 @@ document.getElementById('savePresentation').addEventListener('click', () => {
 	localStorage.setItem(newCandidate.name, JSON.stringify(newCandidate));
 	window.alert('Candidate details saved!');
 
-	window.location.href = "/adminhome.html";
+	window.location.href = "/peoples-choice/adminhome.html";
 });

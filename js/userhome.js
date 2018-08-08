@@ -21,5 +21,5 @@ document.getElementById('saveUserName').addEventListener('click', () => {
 
 	localStorage.setItem('__userName', document.getElementById('userName').value);
 
-	window.location.href = "/uservoting.html";
+	window.location.href = "/peoples-choice/uservoting.html";
 });
