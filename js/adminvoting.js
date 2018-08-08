@@ -30,7 +30,7 @@ if(startDate && endDate) {
 		votingStatusSection.innerHTML = 'Voting is in progress ...';
 		document.getElementById('votingScheduled').classList.remove('hidden');
 	} else if(moment(startDate).isAfter(todayMoment)) {
-		votingStatusSection.innerHTML = `Voting begins ${moment(startDate).fromNow()}`;
+		votingStatusSection.innerHTML = `Voting begins ${moment(startDate).fromNow()} <button class="reschedule">Reschedule</button>`;
 		document.getElementById('votingScheduled').classList.remove('hidden');
 	} else {
 		document.getElementById('votingClosed').classList.remove('hidden');
@@ -42,7 +42,7 @@ if(startDate && endDate) {
 	document.getElementById('votingUnscheduled').classList.remove('hidden');
 }
 
-document.getElementById('reschedule').addEventListener('click', () => {
+document.querySelector('.reschedule').addEventListener('click', () => {
 	Array.from(Array(localStorage.length).keys()).forEach((index) => {
 		const recordName = localStorage.key(index);
 		if (recordName.indexOf('__') === 0) return;
