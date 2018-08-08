@@ -86,11 +86,11 @@ button {
     background-color: #50AE54;
 }
 
-#votingScheduled {
+/*#votingScheduled {
 	display: flex;
     flex-direction: column;
     align-items: center;
-}
+}*/
 
 #votingScheduled section{
 	margin: 2rem 0;
